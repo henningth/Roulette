@@ -15,4 +15,16 @@ class Outcome:
         self.odds = odds
         
     def winAmount(self, amount):
-        self.amount = amount*self.odds
+        return amount*self.odds
+    
+    def __eq__(self, other):
+        if self.name == other.name:
+            return True
+        else:
+            return False
+        
+    def __ne__(self, other):
+        if self.name != other.name:
+            return True
+        else:
+            return False
