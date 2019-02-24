@@ -13,3 +13,6 @@ class Outcome:
     def __init__(self, name, odds):
         self.name = name
         self.odds = odds
+        
+    def winAmount(self, amount):
+        self.amount = amount*self.odds
