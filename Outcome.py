@@ -31,3 +31,9 @@ class Outcome:
         
     def __hash__(self):
         return hash(self.name)
+    
+    def __str__(self):
+        return str(self.name) + "(" + str(self.odds) + ":1)"
+    
+    def __repr(self):
+        return "Outcome(" + str(self.name) + ", " + str(self.odds) + ")"
