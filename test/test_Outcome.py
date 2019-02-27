@@ -13,15 +13,16 @@ import unittest
 
 class TestOutcome(unittest.TestCase):
     
-    def test_Equality(self):
+    def setUp(self):
         self.oc1 = Outcome("Low", 2)
         self.oc2 = Outcome("Low", 2)
+        self.oc3 = Outcome("High", 2)
+    
+    def test_Equality(self):
         self.assertEqual(self.oc1, self.oc2)
         
     def test_NonEquality(self):
-        self.oc1 = Outcome("Low", 2)
-        self.oc2 = Outcome("High", 2)
-        self.assertNotEqual(self.oc1, self.oc2)
+        self.assertNotEqual(self.oc1, self.oc3)
         
 if __name__ == "__main__":
     
