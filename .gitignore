@@ -5,3 +5,4 @@ env
 .pytest_cache
 .coverage
 .spyproject/
+.src/__pycache__
