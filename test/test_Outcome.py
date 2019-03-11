@@ -9,6 +9,8 @@ Test class for the Outcome class
 
 from src.Outcome import Outcome
 
+#from ..src import Outcome
+
 import unittest
 
 class TestOutcome(unittest.TestCase):
