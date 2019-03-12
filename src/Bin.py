@@ -7,8 +7,8 @@ Bin class
 @author: HTH
 """
 
-import collections
+#import collections
 
 # Bin class extends (inherits) frozenset
-class Bin(collections.frozenset):
+class Bin(frozenset):
     pass

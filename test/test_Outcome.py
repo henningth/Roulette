@@ -2,7 +2,7 @@
 """
 Created on Tue Feb 26 21:49:59 2019
 
-Test class for the Outcome class
+Test class for the Outcome class.
 
 @author: HTH
 """
