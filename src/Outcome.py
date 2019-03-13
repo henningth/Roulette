@@ -35,5 +35,5 @@ class Outcome:
     def __str__(self):
         return str(self.name) + "(" + str(self.odds) + ":1)"
     
-    def __repr(self):
+    def __repr__(self):
         return "Outcome(" + str(self.name) + ", " + str(self.odds) + ")"

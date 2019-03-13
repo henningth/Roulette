@@ -33,13 +33,11 @@ class Wheel:
         
     def addOutcome(self, number, outcome):
         
-        print("In Wheel.addOutcome")
-        
         if number == "00":
-            self.bins[37] = outcome
+            self.bins[37] = self.bins[37].union(Bin([outcome]))
         else:
             number = int(number)
-            self.bins[number] = outcome
+            self.bins[number] = self.bins[number].union(Bin([outcome]))
         
     def next(self):
         

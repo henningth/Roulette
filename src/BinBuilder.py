@@ -6,7 +6,6 @@ Created on Wed Mar 13 15:58:31 2019
 """
 
 from src.Outcome import Outcome
-from src.Wheel import Wheel
 
 class BinBuilder:
     
@@ -14,32 +13,22 @@ class BinBuilder:
         
         pass
     
-    def generateStraightBets(self):
-        
-        tempBinList = list(range(38))
+    def generateStraightBets(self, wheel):
         
         for binIdx in range(1,37):
             
-            tempBinList[binIdx] = Outcome("Number " + binIdx, 35)
+            wheel.addOutcome(binIdx, Outcome("Number " + str(binIdx), 35))
             
         # Add 0 and 00
-        tempBinList[0] = Outcome("Number 0", 35)
-        tempBinList[37] = Outcome("Number 00", 35)
+        wheel.addOutcome(0, Outcome("Number 0", 35))
+        wheel.addOutcome(37, Outcome("Number 00", 35))
         
-        return tempBinList
-    
-    def buildBins(self, Wheel):
-        
+    def buildBins(self, wheel):
+                
         """
         This function takes a wheel as argument, 
         and assigns Outcomes to Bins
         The outcomes are based on the Roulette rules. 
         """
-        
-        print("In BinBuilder.buildBins")
-        
-        Wheel.addOutcome(0, Outcome("Number 0", 35))
-        
-        #tempBinList = self.generateStraightBets()
-        
-        #Wheel.addOutcome()
+                
+        BinBuilder.generateStraightBets(self, wheel)
