@@ -10,6 +10,7 @@ from src.BinBuilder import BinBuilder
 #import os
 
 from src.Bin import Bin
+from src.Outcome import Outcome
 
 class Wheel:
     
@@ -31,13 +32,30 @@ class Wheel:
         """
         BinBuilder.buildBins(self, self)
         
+        self.allOutcomes = None # Collection of all outcomes (TODO)
+        
     def addOutcome(self, number, outcome):
+        
+        # TODO: Add other outcomes here.
         
         if number == "00":
             self.bins[37] = self.bins[37].union(Bin([outcome]))
         else:
             number = int(number)
             self.bins[number] = self.bins[number].union(Bin([outcome]))
+            
+    def getOutcome(self, name): # Returns outcome if name matches it
+        
+        # Iterate over all outcomes, return matching ones
+        for outcome in self.allOutcomes:
+            
+            if outcome.name.lower().contains(name.lower()):
+                
+                return set([outcome])
+            
+            else:
+                
+                return set([])
         
     def next(self):
         
