@@ -2,6 +2,8 @@
 """
 Created on Fri Mar 15 14:38:46 2019
 
+Game class.
+
 @author: HTH
 """
 
