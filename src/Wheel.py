@@ -12,6 +12,8 @@ from src.BinBuilder import BinBuilder
 from src.Bin import Bin
 from src.Outcome import Outcome
 
+import random
+
 class Wheel:
     
     def __init__(self):
@@ -59,8 +61,8 @@ class Wheel:
         
     def next(self):
         
-        return self.rng
+        return random.choice(self.bins) # Returns one of the bins at random
     
-    def get(self, number):
+    def get(self, number): # Returns bin at index number
         
         return self.bins[number]

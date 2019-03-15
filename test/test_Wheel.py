@@ -34,7 +34,7 @@ class TestOutcome(unittest.TestCase):
         
         self.assertIn(self.bin0, self.wheel.bins)
         self.assertIn(self.bin00, self.wheel.bins)
-        
+                
 if __name__ == "__main__":
     
     unittest.main()
