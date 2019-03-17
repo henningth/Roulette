@@ -34,7 +34,7 @@ class Wheel:
         """
         BinBuilder.buildBins(self, self)
         
-        self.allOutcomes = None # Collection of all outcomes (TODO)
+        self.allOutcomes = dict() # Collection of all outcomes
         
     def addOutcome(self, number, outcome):
         
@@ -42,9 +42,12 @@ class Wheel:
         
         if number == "00":
             self.bins[37] = self.bins[37].union(Bin([outcome]))
+            
+            self.allOutcomes["Number 00"] = outcome
         else:
             number = int(number)
             self.bins[number] = self.bins[number].union(Bin([outcome]))
+            self.allOutcomes["Number " + str(number)] = outcome
             
     def getOutcome(self, name): # Returns outcome if name matches it
         

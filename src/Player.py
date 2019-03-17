@@ -13,7 +13,7 @@ class Player:
         
         self.table = table
         self.stake = stake
-        self.roundsToGo = roundsToGo # Should this be included
+        self.roundsToGo = roundsToGo # Should this be included?
         
     def playing(self):
         
