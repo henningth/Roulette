@@ -11,8 +11,9 @@ from src.Bet import Bet
 
 class Player:
     
-    def __init__(self, table, stake, roundsToGo):
+    def __init__(self, name, table, stake, roundsToGo):
         
+        self.name = name
         self.table = table
         self.stake = stake
         self.roundsToGo = roundsToGo # Should this be included?
@@ -28,19 +29,30 @@ class Player:
         # Update table with player's bets
         
         try:
+            
+            #chosenCommand = input("Enter one or several bets, q to stop betting this round.")
+            
+            chosenCommand = ""
+            
+            while chosenCommand != "q": # Player can bet as long as he has money
                 
-            chosenOutcome = input("Enter outcome to bet on: ")
-            
-            chosenOutcome = "Number " + chosenOutcome
-            
-            #chosenOutcome = wheel.getOutcome(chosenOutcome)
-            chosenOutcome = game.wheel.getOutcome(chosenOutcome)
-            
-            chosenAmount = int(input("Enter amount to bet: "))
-            
-            bet = Bet(chosenAmount, chosenOutcome)
-            
-            self.table.placeBet(bet)
+                chosenOutcome = input("Enter outcome to bet on: ")
+                
+                chosenOutcome = "Number " + chosenOutcome
+                
+                chosenOutcome = game.wheel.getOutcome(chosenOutcome)
+                
+                chosenAmount = int(input("Enter amount to bet: "))
+                
+                bet = Bet(chosenAmount, chosenOutcome)
+                
+                self.table.placeBet(bet)
+                
+                self.stake -= bet.amount
+                
+                print("Stake left: ", self.stake)
+                
+                chosenCommand = input("Enter q to stop betting, any other key to continue.")
             
         except KeyboardInterrupt:
             print("Quitting")
@@ -50,7 +62,7 @@ class Player:
         
         # Called by game if this players bet was a winning bet
         # Amount won is returned by bet.winAmount()
-        pass
+        self.stake += bet.amount
     
     def lose(self, bet):
         

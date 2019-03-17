@@ -24,8 +24,13 @@ class Game:
         # Cycles though the steps for a given player
         
         # The player places his bets
-        #player.placeBets(self.wheel)
         player.placeBets(self)
+        
+        print("Bets on table: ")
+        
+        for bet in self.table.bets:
+            
+            print(bet, " by player ", player.name)
         
         # Spin the roulette wheel to get next number
         winningBin = self.wheel.next()
@@ -42,6 +47,14 @@ class Game:
                 if bet.outcome == outcome:
                     
                     print("Congratulations, you won!")
+                    
+                    player.win(bet)
+                    
+                else:
+                    
+                    #print("Sorry, this bet didn't win!")
+                    
+                    player.lose(bet)
                                     
 if __name__ == "__main__":
     
@@ -52,7 +65,9 @@ if __name__ == "__main__":
     game = Game(wheel, table)
     
     # Creates a player
-    player = Player(table, 100, 5)
+    playerName = input("Choose player name: ")
+    
+    player = Player(playerName, table, 100, 5)
     
     # Runs the Roulette game
     game.cycle(player)
