@@ -28,13 +28,13 @@ class Wheel:
         # Right now, it is a list with 38 entries
         self.bins = list( Bin() for i in range(38) )
         
+        self.allOutcomes = dict() # Collection of all outcomes
+        
         """
         We then call the buildBins() function in the 
         BinBuilder class.
         """
         BinBuilder.buildBins(self, self)
-        
-        self.allOutcomes = dict() # Collection of all outcomes
         
     def addOutcome(self, number, outcome):
         
