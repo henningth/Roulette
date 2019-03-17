@@ -52,15 +52,13 @@ class Wheel:
     def getOutcome(self, name): # Returns outcome if name matches it
         
         # Iterate over all outcomes, return matching ones
-        for outcome in self.allOutcomes:
+        for outcome in self.allOutcomes.values():
             
-            if outcome.name.lower().contains(name.lower()):
+            if outcome.name.lower() == name.lower():
                 
-                return set([outcome])
-            
-            else:
-                
-                return set([])
+                return outcome
+        
+        return None
         
     def next(self):
         

@@ -23,12 +23,19 @@ class Player:
         
         pass
     
-    def placeBets(self):
+    def placeBets(self, game):
         
         # Update table with player's bets
         
         try:
+                
             chosenOutcome = input("Enter outcome to bet on: ")
+            
+            chosenOutcome = "Number " + chosenOutcome
+            
+            #chosenOutcome = wheel.getOutcome(chosenOutcome)
+            chosenOutcome = game.wheel.getOutcome(chosenOutcome)
+            
             chosenAmount = int(input("Enter amount to bet: "))
             
             bet = Bet(chosenAmount, chosenOutcome)

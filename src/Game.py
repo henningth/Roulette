@@ -24,7 +24,8 @@ class Game:
         # Cycles though the steps for a given player
         
         # The player places his bets
-        player.placeBets()
+        #player.placeBets(self.wheel)
+        player.placeBets(self)
         
         # Spin the roulette wheel to get next number
         winningBin = self.wheel.next()
@@ -34,13 +35,14 @@ class Game:
         # Check player's bets which are on the table for win or loss
         # Note: For now only assumes one play, we need to change this later 
         # if we want several players
-        for bet in self.table.bets:
-            
-            for outcome in self.wheel.bins:
-            
-                pass
-                #if bet.outcome == wheel
-                
+        for bet in self.table.bets: # Cycle through all bets placed on the table
+                        
+            for outcome in winningBin: # Cycle through all outcomes in the winning bin
+                            
+                if bet.outcome == outcome:
+                    
+                    print("Congratulations, you won!")
+                                    
 if __name__ == "__main__":
     
     # Main entry point of the game
