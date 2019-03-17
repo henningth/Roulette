@@ -7,6 +7,8 @@ Player class
 @author: HTH
 """
 
+from src.Bet import Bet
+
 class Player:
     
     def __init__(self, table, stake, roundsToGo):
@@ -17,11 +19,25 @@ class Player:
         
     def playing(self):
         
+        # Return true if player is active.
+        
         pass
     
     def placeBets(self):
         
-        pass
+        # Update table with player's bets
+        
+        try:
+            chosenOutcome = input("Enter outcome to bet on: ")
+            chosenAmount = int(input("Enter amount to bet: "))
+            
+            bet = Bet(chosenAmount, chosenOutcome)
+            
+            self.table.placeBet(bet)
+            
+        except KeyboardInterrupt:
+            print("Quitting")
+            exit()
     
     def win(self, bet):
         

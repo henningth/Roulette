@@ -7,7 +7,7 @@ Table class.
 @author: HTH
 """
 
-from src.Wheel import Wheel
+#from src.Wheel import Wheel
 
 class InvalidBet(Exception):
     
@@ -24,9 +24,15 @@ class Table:
         
     def placeBet(self, bet):
         
-        if bet is not Wheel.getOutcome(name):
+        self.bets.append(bet)
+        
+        #if bet is not Wheel.getOutcome(name):
+          
+        #    raise InvalidBet("Invalid bet")
             
-            raise InvalidBet("Invalid bet")
+        #else:
+            
+        #    self.bets.append(bet)
     
     def isValid(self):
         
