@@ -28,7 +28,9 @@ class Wheel:
         # Right now, it is a list with 38 entries
         self.bins = list( Bin() for i in range(38) )
         
-        self.allOutcomes = dict() # Collection of all outcomes
+        # Collection of all outcomes
+        # Used in getOutcome to return a desired outcome
+        self.allOutcomes = dict()
         
         """
         We then call the buildBins() function in the 
@@ -49,7 +51,9 @@ class Wheel:
             self.bins[number] = self.bins[number].union(Bin([outcome]))
             self.allOutcomes["Number " + str(number)] = outcome
             
-    def getOutcome(self, name): # Returns outcome if name matches it
+    # Returns outcome if name matches it
+    # Factory function
+    def getOutcome(self, name):
         
         # Iterate over all outcomes, return matching ones
         for outcome in self.allOutcomes.values():

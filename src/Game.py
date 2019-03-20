@@ -54,14 +54,14 @@ class Game:
                     
                     #print("Sorry, this bet didn't win!")
                     
-                    player.lose(bet)
-                                    
+                    #player.lose(bet)
+
 if __name__ == "__main__":
     
     # Main entry point of the game
     
     wheel = Wheel()
-    table = Table(100,0)
+    table = Table(100,1)
     game = Game(wheel, table)
     
     # Creates a player
