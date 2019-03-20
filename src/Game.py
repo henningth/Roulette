@@ -50,7 +50,7 @@ class Game:
                     
                     player.win(bet)
                     
-                else:
+                #else:
                     
                     #print("Sorry, this bet didn't win!")
                     

@@ -17,6 +17,9 @@ class Outcome:
     def winAmount(self, amount):
         return amount*self.odds
     
+    """
+    Below are overloaded methods for this class.
+    """    
     def __eq__(self, other):
         if self.name == other.name:
             return True

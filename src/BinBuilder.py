@@ -15,13 +15,16 @@ class BinBuilder:
     
     def generateStraightBets(self, wheel):
         
-        for binIdx in range(1,37):
+        for binIdx in range(37):
             
-            wheel.addOutcome(binIdx, Outcome("Number " + str(binIdx), 35))
+            #wheel.addOutcome(binIdx, Outcome("Number " + str(binIdx), 35))
+            wheel.addOutcome(binIdx, wheel.getOutcome("Number " + str(binIdx)))
             
         # Add 0 and 00
-        wheel.addOutcome(0, Outcome("Number 0", 35))
-        wheel.addOutcome(37, Outcome("Number 00", 35))
+        #wheel.addOutcome(0, Outcome("Number 0", 35))
+        #wheel.addOutcome(37, Outcome("Number 00", 35))
+        #wheel.addOutcome(0, wheel.getOutcome("Number 0"))
+        wheel.addOutcome(37, wheel.getOutcome("Number 00"))
         
     def buildBins(self, wheel):
                 
